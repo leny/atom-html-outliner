@@ -1,6 +1,6 @@
 {
   "name": "html-outliner",
-  "main": "./lib/html-outliner",
+  "main": "./lib/main",
   "version": "0.0.0",
   "description": "Check the outline of HTML file, using html 4 & html 5 specs.",
   "repository": "https://github.com/leny/atom-html-outliner",
@@ -8,5 +8,8 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "atom-message-panel": "^1.2.7",
+    "h5o": "^0.11.3"
+  }
 }
