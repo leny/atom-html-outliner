@@ -7,16 +7,50 @@
 
 .outliner-view {
     header {
-        margin: 0 auto 10px;
-        padding: 0 0 5px;
+        margin: 0 auto 15px;
+        padding: 0 0 10px;
         border-bottom: 1px solid @button-background-color;
         text-align: center;
     }
     .btn-toolbar {
+        margin: 0 auto 15px;
         text-align: center;
         .btn-group {
             float: none;
             margin: 0 auto;
+        }
+    }
+}
+
+.outline-container {
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+    li {
+        margin: 0 auto 5px;
+        em {
+            font-style: normal;
+            color: @text-color-info;
+            &::before {
+                content: "[";
+            }
+            &::after {
+                content: "]";
+            }
+        }
+        span {
+            color: @text-color-highlight;
+        }
+        ul {
+            padding: 5px 0 0 20px;
+        }
+        &::before {
+            content: attr(data-index) " ";
+            color: @text-color-subtle;
+        }
+        &.is-root::before {
+            content: "1 ";
         }
     }
 }
