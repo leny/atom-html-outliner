@@ -5,7 +5,14 @@
 
 @import "ui-variables";
 
-.outliner-view {
+atom-panel-container.modal atom-panel.modal .select-list.outliner-view {
+    background: transparent;
+    atom-text-editor.editor.mini {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        opacity: 0;
+    }
     header {
         margin: 0 auto 15px;
         padding: 0 0 10px;
@@ -15,13 +22,17 @@
             color: @text-color-subtle;
         }
     }
-    .btn-toolbar {
+    .list-group {
+        width: 50%;
         margin: 0 auto 15px;
-        text-align: center;
-        .btn-group {
-            float: none;
-            margin: 0 auto;
+        li {
+            display: inline-block;
+            height: auto;
+            line-height: 1;
         }
+    }
+    .error-message, .loading {
+        display: none;
     }
 }
 
