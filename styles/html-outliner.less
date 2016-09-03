@@ -52,5 +52,23 @@
         &.is-root::before {
             content: "1 ";
         }
+        &.has-error {
+            &::before {
+                color: @background-color-error;
+            }
+            > em {
+                margin-right: 2px;
+                color: @background-color-error;
+            }
+            > span {
+                color: @text-color-subtle;
+                &::after {
+                    content: " ";
+                    font-family: "Octicons";
+                    color: @background-color-error;
+                    vertical-align: middle;
+                }
+            }
+        }
     }
 }
