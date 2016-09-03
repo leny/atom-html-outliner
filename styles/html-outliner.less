@@ -11,6 +11,9 @@
         padding: 0 0 10px;
         border-bottom: 1px solid @button-background-color;
         text-align: center;
+        strong {
+            color: @text-color-subtle;
+        }
     }
     .btn-toolbar {
         margin: 0 auto 15px;
@@ -28,7 +31,10 @@
         padding: 0;
     }
     li {
-        margin: 0 auto 5px;
+        margin: 0 auto 2px;
+        > div {
+            padding: 1px 2px 1px 5px;
+        }
         em {
             font-style: normal;
             color: @text-color-info;
@@ -45,28 +51,42 @@
         ul {
             padding: 5px 0 0 20px;
         }
-        &::before {
-            content: attr(data-index) " ";
+        > div::before {
+            content: attr(data-index) " - ";
             color: @text-color-subtle;
         }
-        &.is-root::before {
-            content: "1 ";
+        &.is-root > div::before {
+            content: "1 - ";
+        }
+        &.element-four > div::before {
+            content: attr(data-index) " - ";
+            color: @text-color-subtle;
         }
         &.has-error {
-            &::before {
-                color: @background-color-error;
-            }
-            > em {
-                margin-right: 2px;
-                color: @background-color-error;
-            }
-            > span {
-                color: @text-color-subtle;
+            > div {
+                position: relative;
+                margin-right: 20px;
+                border-radius: 2px;
+                background: @background-color-error;
+                &::before {
+                    color: @app-background-color;
+                }
                 &::after {
                     content: " ";
+                    position: absolute;
+                    top: 0;
+                    right: -20px;
+                    bottom: 0;
+                    left: auto;
                     font-family: "Octicons";
                     color: @background-color-error;
-                    vertical-align: middle;
+                }
+                > em {
+                    margin-right: 2px;
+                    color: @app-background-color;
+                }
+                > span {
+                    color: @app-background-color;
                 }
             }
         }
