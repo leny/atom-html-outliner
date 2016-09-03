@@ -1,7 +1,7 @@
 {
   "name": "html-outliner",
   "main": "./lib/main",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Check the outline of HTML file, using html 4 & html 5 specs.",
   "repository": "https://github.com/leny/atom-html-outliner",
   "license": "MIT",
